@@ -15,7 +15,7 @@
     "enzyme-to-json": "^3.3.4",
     "express": "^4.16.4",
     "jest": "^23.6.0",
-    "live-server": "^1.2.0",
+    "live-server": "^1.2.1",
     "moment": "^2.22.2",
     "node-sass": "^4.9.3",
     "normalize.css": "^8.0.0",
@@ -38,7 +38,8 @@
   },
   "scripts": {
     "server": "live-server public --entry-file=index.html",
-    "start": "webpack-dev-server --open",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod",
     "build": "webpack --watch",
     "build:prod": "webpack -p --env production",
     "test": "jest --config=jest.config.json --watchAll"
